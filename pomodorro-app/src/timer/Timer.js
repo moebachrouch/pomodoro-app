@@ -448,6 +448,9 @@ class Timer extends Component {
     } else {
       displayColour = "#003eb3";
     }
+
+    let isNotPaused = !this.state.isPaused;
+
     return (
       <div>
         <div></div>
@@ -493,7 +496,7 @@ class Timer extends Component {
               <div>
                 <form>
                   <label>Work interval duration: </label>
-                  <select 
+                  <select disabled={isNotPaused}
                   onChange={this.updateWorkMinutes} >
                     <option value="25">25 minutes</option>
                     <option value="30">30 minutes</option>
@@ -511,7 +514,9 @@ class Timer extends Component {
               <div>
                 <form>
                   <label>Short break duration: </label>
-                  <select onChange={this.updateBreakMinutes}>
+                  <select 
+                  onChange={this.updateBreakMinutes}
+                  disabled={isNotPaused}>
                     <option value="5">5 minutes</option>
                     <option value="10">10 minutes</option>
                     <option value="15">15 minutes</option>
@@ -521,7 +526,9 @@ class Timer extends Component {
 
               <div>
                 <label>Long break duration: </label>
-                <select  onChange={this.updateLongBreakMinutes}>
+                <select 
+                onChange={this.updateLongBreakMinutes}
+                disabled={isNotPaused}>
                   <option value="15">15 minutes</option>
                   <option value="20">20 minutes</option>
                   <option value="25">25 minutes</option>
@@ -531,7 +538,9 @@ class Timer extends Component {
 
               <div>
                 <label>Long break after: </label>
-                <select  onChange={this.updateWorkCycles}>
+                <select 
+                onChange={this.updateWorkCycles}
+                disabled={isNotPaused}>
                   <option value="4">4 pomodoros</option>
                   <option value="3">3 pomodoros</option>
                   <option value="1">2 pomodoros</option>
