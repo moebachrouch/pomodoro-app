@@ -1,11 +1,16 @@
 import React, { Component } from "react";
 
-let TIME_INTERVAL = 1000;
-let WORK_CYCLES = 4;
-let WORK_TIME = 25;
-let BREAK_TIME = 5;
-let LONG_BREAK_TIME = 25;
+const TIME_INTERVAL = 1000;
+const WORK_CYCLES = 4;
+const WORK_TIME = 25;
+const BREAK_TIME = 5;
+const LONG_BREAK_TIME = 25;
 
+let TEMP_TIME_INTERVAL = TIME_INTERVAL;
+let TEMP_WORK_CYCLES = WORK_CYCLES;
+let TEMP_WORK_TIME = WORK_TIME;
+let TEMP_BREAK_TIME = BREAK_TIME;
+let TEMP_LONG_BREAK_TIME = LONG_BREAK_TIME;
 
 class Timer extends Component {
   constructor(props) {
@@ -44,22 +49,25 @@ class Timer extends Component {
   }
 
   updateWorkMinutes(min) {
+    TEMP_WORK_TIME = min.target.value;
     this.setState({
-      workMinutes: min.target.value,
+      workMinutes: TEMP_WORK_TIME,
       workSeconds: 0
     });
   }
 
   updateBreakMinutes(min) {
+    TEMP_BREAK_TIME = min.target.value;
     this.setState({
-      breakMinutes: min.target.value,
+      breakMinutes: TEMP_BREAK_TIME,
       breakSeconds: 0
     });
   }
 
   updateLongBreakMinutes(min) {
+    TEMP_LONG_BREAK_TIME = min.target.value;
     this.setState({
-      longBreakMinutes: min.target.value,
+      longBreakMinutes: TEMP_LONG_BREAK_TIME,
       longBreakSeconds: 0
     });
   }
@@ -79,13 +87,13 @@ class Timer extends Component {
       isPaused: true,
 
       workSeconds: 0,
-      workMinutes: WORK_TIME,
+      workMinutes: TEMP_WORK_TIME,
 
       breakSeconds: 0,
-      breakMinutes: BREAK_TIME,
+      breakMinutes: TEMP_BREAK_TIME,
 
       longBreakSeconds: 0,
-      longBreakMinutes: LONG_BREAK_TIME,
+      longBreakMinutes: TEMP_LONG_BREAK_TIME,
     });
 
     this.clearAllTimers();
