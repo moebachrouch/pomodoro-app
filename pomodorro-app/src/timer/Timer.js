@@ -518,7 +518,7 @@ class Timer extends Component {
                     disabled={isNotPaused}
                     onChange={this.updateWorkMinutes}
                   >
-                    <option value="25">25 minutes</option>
+                    <option selected="selected" value="25">25 minutes</option>
                     <option value="30">30 minutes</option>
                     <option value="35">35 minutes</option>
                     <option value="40">40 minutes</option>
@@ -538,7 +538,7 @@ class Timer extends Component {
                     onChange={this.updateBreakMinutes}
                     disabled={isNotPaused}
                   >
-                    <option value="5">5 minutes</option>
+                    <option selected="selected" value="5">5 minutes</option>
                     <option value="10">10 minutes</option>
                     <option value="15">15 minutes</option>
                   </select>
@@ -551,7 +551,7 @@ class Timer extends Component {
                   onChange={this.updateLongBreakMinutes}
                   disabled={isNotPaused}
                 >
-                  <option value="15">15 minutes</option>
+                  <option selected="selected" value="15">15 minutes</option>
                   <option value="20">20 minutes</option>
                   <option value="25">25 minutes</option>
                   <option value="30">30 minutes</option>
@@ -561,7 +561,7 @@ class Timer extends Component {
               <div>
                 <label>Long break after: </label>
                 <select onChange={this.updateWorkCycles} disabled={isNotPaused}>
-                  <option value="4">4 pomodoros</option>
+                  <option selected="selected" value="4">4 pomodoros</option>
                   <option value="3">3 pomodoros</option>
                   <option value="1">2 pomodoros</option>
                   <option value="1">1 pomodoro</option>

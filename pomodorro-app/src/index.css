@@ -10,7 +10,7 @@ code {
 }
 
 button {
-  background-color: #555555; /* Green */
+  background-color: #797979;
   margin-right:5px;
   margin-bottom: 5px;
   border-radius: 4px;
@@ -24,6 +24,9 @@ button {
 }
 
 select {
-  padding: 3px;
   margin-bottom: 10px;
+  padding: 4px;
+  border-radius: 4px;
+  background-color: #797979;
+  color: white;
 }
